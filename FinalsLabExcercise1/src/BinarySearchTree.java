@@ -108,21 +108,15 @@ public class BinarySearchTree {
 	 * (which is always the smallest in a binary search tree) 
 	 */
 	public Integer minimum(Node node) {
-		
-		// Checks if the tree is empty
-		if (node == null) {
-			System.out.println("The tree is empty.");
-		} else {
-			// Check if it's a node
-			if (node.getLeft() == null) {
-				return node.getKey();
-			}
-			
-			//Recurs to the left most node 
-			return minimum(node.getLeft());
+		// Check if it's a node/the top node
+		if (node.getLeft() == null) {
+			return node.getKey();
 		}
 		
-		return null;
+		//Recurs to the left most node 
+		return minimum(node.getLeft());
 	}
+	
+	
 	
 }

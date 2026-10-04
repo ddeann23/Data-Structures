@@ -8,14 +8,14 @@ public class Main {
 		int data = 0;
 		BinarySearchTree tree = new BinarySearchTree();
 		
-		// Initiating the tree
-		tree.insert(50);
-		tree.insert(30);
-		tree.insert(20);
-		tree.insert(40);
-		tree.insert(70);
-		tree.insert(60);
-		tree.insert(80);
+//		// Initiating the tree
+//		tree.insert(50);
+//		tree.insert(30);
+//		tree.insert(20);
+//		tree.insert(40);
+//		tree.insert(70);
+//		tree.insert(60);
+//		tree.insert(80);
 
 		while (running) {
 			System.out.println("\nBinary Search Tree (BST) program");
@@ -29,30 +29,46 @@ public class Main {
 			int menu = inputValidation(reader, "Enter your option: ");
 			
 			switch (menu) {
-				case 1:
+				case 1: //Insert Data
 					data = inputValidation(reader, "Enter the data to insert: ");
 					tree.insert(data);
 					break;
-				case 2:
-					System.out.print("Printing in Inorder: ");
-					tree.printInorder(tree.getRoot());
-					System.out.println();
-					break;
-				case 3:
-					data = inputValidation(reader, "Enter the data to search: ");
-					tree.search(data);
-					System.out.println();
-					break;
-				case 4:
-					System.out.println("Total number of leaf nodes: " + tree.countLeaf(tree.getRoot()));
-					break;
-				case 5:
-					Integer min = tree.minimum(tree.getRoot());
-					if (min != null) {
-						System.out.println("The smallest key is: " + min);
+				case 2: //Display Inorder
+					if (tree.getRoot() == null) {
+						System.out.println("The Tree is Empty.");
+					} else {
+						System.out.print("Printing in Inorder: ");
+						tree.printInorder(tree.getRoot());
+						System.out.println();
 					}
 					break;
-				case 6:
+				case 3: //Search Data
+					if (tree.getRoot() == null) {
+						System.out.println("The Tree is Empty.");
+					} else {
+						data = inputValidation(reader, "Enter the data to search: ");
+						tree.search(data);
+						System.out.println();
+					}
+					break;
+				case 4: //Leaf Counter
+					if (tree.getRoot() == null) {
+						System.out.println("The Tree is Empty.");
+					} else {
+						System.out.println("Total number of leaf nodes: " + tree.countLeaf(tree.getRoot()));
+						break;
+					}
+				case 5: //Minimum Finder
+					if (tree.getRoot() == null) {
+						System.out.println("The Tree is Empty.");
+					} else {
+						Integer min = tree.minimum(tree.getRoot());
+						if (min != null) {
+							System.out.println("The smallest key is: " + min);
+						}
+					}
+					break;
+				case 6: //Program Terminator
 					running = false;
 					System.out.println("Program Terminated...");
 					break;
@@ -63,7 +79,7 @@ public class Main {
 		}
 	}
 	
-	// Static helper method so it can be called directly from main()
+	// Satic Input validation method 
 	public static int inputValidation(BufferedReader reader, String prompt) throws IOException {
 		while (true) {
 			System.out.print(prompt);
