@@ -80,6 +80,7 @@ public class BinarySearchTree {
 		// Recur on left
 		printInorder(node.getLeft());
 		
+		// prints Node
 		System.out.print(node.getKey() + " ");
 		
 		// Recur on right
@@ -117,6 +118,40 @@ public class BinarySearchTree {
 		return minimum(node.getLeft());
 	}
 	
-	
+	//Display the BST using Preorder (Root -> Left -> Right)
+	public void printPreorder(Node node) {
+			
+		//Checks if its a node
+		if (node == null) {
+			return;
+		}
+		
+		//Prints the node
+		System.out.print(node.getKey() + " ");
+			
+		//Prints left
+		printPreorder(node.getLeft());
+			
+		//Prints right
+		printPreorder(node.getRight());
+			
+	}
+		
+	//Display the BST using PostOrder (Left -> Right -> Root)
+	public void printPostorder(Node node) {
+			
+		//Checks if its a node
+		if (node == null) {
+			return;
+		}
+		//Prints left
+		printPostorder(node.getLeft());
+			
+		//Prints right
+		printPostorder(node.getRight());
+			
+		//Prints the node
+		System.out.print(node.getKey() + " ");
+	}
 	
 }

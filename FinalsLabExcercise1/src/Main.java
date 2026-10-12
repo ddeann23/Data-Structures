@@ -8,14 +8,14 @@ public class Main {
 		int data = 0;
 		BinarySearchTree tree = new BinarySearchTree();
 		
-//		// Initiating the tree
-//		tree.insert(50);
-//		tree.insert(30);
-//		tree.insert(20);
-//		tree.insert(40);
-//		tree.insert(70);
-//		tree.insert(60);
-//		tree.insert(80);
+		// Initiating the tree
+		tree.insert(50);
+		tree.insert(30);
+		tree.insert(20);
+		tree.insert(40);
+		tree.insert(70);
+		tree.insert(60);
+		tree.insert(80);
 
 		while (running) {
 			System.out.println("\nBinary Search Tree (BST) program");
@@ -37,9 +37,24 @@ public class Main {
 					if (tree.getRoot() == null) {
 						System.out.println("The Tree is Empty.");
 					} else {
-						System.out.print("Printing in Inorder: ");
-						tree.printInorder(tree.getRoot());
-						System.out.println();
+						int mode = inputValidation(reader, "Select Display Mode (1. Pre-Order, 2. In-Order 3. Post-Order: ");
+						switch (mode) {
+							case 1:
+								System.out.print("Printing in Pre-Order: ");
+								tree.printPreorder(tree.getRoot());
+								System.out.println();
+							break;
+							case 2:
+								System.out.print("Printing in In-Order: ");
+								tree.printInorder(tree.getRoot());
+								System.out.println();
+							break;
+							case 3:
+								System.out.print("Printing in Post-Order: ");
+								tree.printPostorder(tree.getRoot());
+								System.out.println();
+							break;
+						}
 					}
 					break;
 				case 3: //Search Data
