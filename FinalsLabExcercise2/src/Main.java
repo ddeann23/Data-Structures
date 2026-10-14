@@ -50,7 +50,12 @@ public class Main {
 				case 4: //Find Path
 					data = inputValidation(reader, "Enter first vertex: ");
 					data2 = inputValidation(reader, "Enter second vertex: ");
-					System.out.println(graph.findPath(data, data2));
+					
+					if (data == data2) {
+						System.out.println("Please give a different vertex...");
+						break;
+					}
+					System.out.println("The path between " + data + " and " + data2 + " is: " + (graph.findPath(data, data2) ? "TRUE" : "FALSE"));
 					break;
 				case 5: //Display Neighbors
 					data = inputValidation(reader, "Enter vertex: ");

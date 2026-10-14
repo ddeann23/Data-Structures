@@ -11,6 +11,15 @@ public class Graph {
 	
 	//3. Add Vertex
 	public void addVertex(int data) {
+		
+		//Checker if the data is already added
+		for (int i = 0; i < vertices.getSize(); i++) {
+			if (vertices.getVertex(i).getData() == data) {
+				System.out.println("The data is already in the graph.");
+				return;
+			}
+		}
+		
 		Vertex vertex = new Vertex(data);
 		vertices.add(vertex);
 	}
