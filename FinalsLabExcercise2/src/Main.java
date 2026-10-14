@@ -48,7 +48,9 @@ public class Main {
 					graph.addDirectedEdge(data, data2);
 					break;
 				case 4: //Find Path
-					
+					data = inputValidation(reader, "Enter first vertex: ");
+					data2 = inputValidation(reader, "Enter second vertex: ");
+					System.out.println(graph.findPath(data, data2));
 					break;
 				case 5: //Display Neighbors
 					data = inputValidation(reader, "Enter vertex: ");
