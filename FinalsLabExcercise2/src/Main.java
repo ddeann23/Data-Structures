@@ -50,7 +50,7 @@ public class Main {
 				case 4: //Find Path
 					data = inputValidation(reader, "Enter first vertex: ");
 					data2 = inputValidation(reader, "Enter second vertex: ");
-					
+					 
 					if (data == data2) {
 						System.out.println("Please give a different vertex...");
 						break;

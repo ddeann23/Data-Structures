@@ -28,7 +28,7 @@ public class List {
 	 * 2. Transfer the vertices into temp.
 	 * 3. make temp the new vertices.
 	*/
-	private void ensureCapacity() {
+	private void ensureCapacity() { 
 		if (size == vertices.length) {
 			Vertex[] temp = new Vertex[size * 2];
 			for (int i = 0; i < size; i++) {

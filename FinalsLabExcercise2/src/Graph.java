@@ -90,7 +90,7 @@ public class Graph {
 			System.out.println("One or more vertices are not found.");
 		}
 		
-		resetter();
+		resetter(); 
 		
 		return found;
 	}

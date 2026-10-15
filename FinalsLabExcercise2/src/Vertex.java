@@ -17,7 +17,7 @@ public class Vertex {
 		this.neighbors = new List();
 		this.searched = false;
 	}
-	
+	 
 	//3. Getters Setters
 	public int getData() {
 		return data;
